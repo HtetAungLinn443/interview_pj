@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --theme-color: #6300dd;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.navigation {
+    position: fixed;
+    top: 0px;
+    left: 20px;
+    bottom: 0px;
+    width: 15%;
+    box-sizing: inherit;
+    border-left: 5px solid var(--theme-color);
+    background-color: var(--theme-color);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.navigation ul li.active {
+    background-color: #fff;
+}
+
+
+/* first child */
+
+.navigation ul li b:nth-child(1) {
+    position: absolute;
+    top: -20px;
+    height: 20px;
+    width: 100%;
+    background-color: #fff;
+    display: none;
+}
+
+.navigation ul li b:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 20px;
+    background-color: var(--theme-color);
+}
+
+
+/* second child */
+
+.navigation ul li b:nth-child(2) {
+    position: absolute;
+    bottom: -20px;
+    height: 20px;
+    width: 100%;
+    background-color: #fff;
+    display: none;
+}
+
+.navigation ul li b:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 20px;
+    background-color: var(--theme-color);
+}
+
+.navigation ul li.active b:nth-child(1),
+.navigation ul li.active b:nth-child(2) {
+    display: block;
+}
+
+.navigation ul li.active a {
+    color: #333;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+    font-size: 1.5rem;
+}
+
+.navigation ul li a .text {
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: normal;
+}
+
+.toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--theme-color);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.toggle ion-icon {
+    position: absolute;
+    color: #fff;
+    font-size: 34px;
+    display: none;
+}
+
+.toggle ion-icon.open,
+.toggle.active ion-icon.close {
+    display: block;
+}
+
+.toggle ion-icon.close,
+.toggle.active ion-icon.open {
+    display: none;
+}
+
+.logout-btn {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.main-container {
+    position: relative;
+}
+
+.content {
+    position: relative;
+    top: 0;
+    left: 16%;
+    min-height: 100vh;
+    width: 83%;
+}
+
+.top-nav {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    height: 50px;
+    box-shadow: 0 0 100px 10px #b8b7b7;
+    z-index: 1000;
+}
+
+.profile {
+    text-align: end;
+    line-height: 50px;
+    padding-right: 10px;
+}
+
+.profile img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid gray;
+}
+
+.btn-theme {
+    background-color: var(--theme-color);
+    color: #fff;
+}
+
+.text-theme {
+    color: var(--theme-color);
+}
+
+.bg-theme {
+    background-color: var(--theme-color);
+}
+
+.btn-theme:hover {
+    background-color: #6300ddb9;
+    color: #fff;
+}
+
+.nav-logo {
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.preview_img img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    border: 2px solid gray;
+    margin: 0 5px;
+}
+
+.action-icon a {
+    padding: 5px;
+    background-color: #eee;
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    line-height: 20px;
+    display: inline-block;
+    margin: 3px !important;
+}
+
+.action-icon {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+}
+
+.action-icon a {
+    text-align: center;
+}
+
+.table tr,
+.table th {
+    vertical-align: middle;
+}
+
+.action-btn {
+    justify-content: center;
+}
+
+.active>.page-link,
+.page-link.active {
+    background-color: var(--theme-color);
+    color: #fff;
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details {
+    width: 100% !important;
+    text-align: left !important;
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details li {
+    text-align: start !important;
+}
+
+.paginate_button.active a {
+    background-color: var(--theme-color) !important;
+}
+
+.paginate_button a {
+    font-size: 14px !important;
+    background-color: #eee !important;
+    margin: 0 2px;
+}
